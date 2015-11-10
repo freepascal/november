@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+	{% for message in app.session.getFlashBag.get('msg') %}
+		{{ message }}
+	{% endfor %}
+	<form method="post">
+		<dt>Username<dl><input type="text" name="username" value=""></dl></dt>
+		<dt>Email<dl><input type="text" name="email" value=""></dl></dt>
+		<dt>Password<dl><input type="password" name="password" value=""></dl></dt>
+		<dt>Password again<dl><input type="password" name="password_again" value=""></dl></dt>
+		
+		<dt>Captcha<dl><img src="{{ captcha_image }}"></dl></dt>
+		<dt><dl><input type="text" name="captcha_register" value=""></dl></dt>		
+		<input type="submit" name="submit" value="Register">
+	</form>
+</body>
+</html>

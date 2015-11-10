@@ -3,23 +3,18 @@
 require_once('vendor/autoload.php');
 require_once('bootstrap.php');
 
-use Symfony\Component\HttpFoundation\Request as Request;
-	
-$app->match('/', function() use($app) {	
-	return $app['twig']->render('index.html.twig', array(
-		'logged_in' => $app['session']->get('user')? true: false,
-		'username'	=> $app['session']->get('user')['username'],
-		'title' 	=> 'Homepage'
-	));
-})
-->method('get');
+require_once('models/User.php');
 
-$app->get('/users', function() use($app) {
-	return $app['twig']->render('index.html.twig', array(
-		'title' 	=> 'Index',
-		'logged_in' => true
-	));
-});
+
+
+
+require_once('controllers/TestControllerProvider.php');
+require_once('controllers/UsersControllerProvider.php');
+require_once('controllers/PostsControllerProvider.php');
+require_once('controllers/InstallerControllerProvider.php');
+
+
+use Symfony\Component\HttpFoundation\Request as Request;
 
 $app->get('/generate_passwd', function() use($app) {
 	return $app['twig']->render('generate_passwd.html.twig', array());
@@ -31,40 +26,12 @@ $app->post('/generate_passwd', function(Request $request) use($app) {
 	);
 });
 
-// Login && logout
-$app->get('/login', function() use($app) {
-	return $app['twig']->render('login.html.twig', array());
-});
+$postsControllerProvider = new PostsControllerProvider();
 
-$app->post('/login', function(Request $request) use($app) {
-	$username = trim($request->get('username'));
-	$password = trim($request->get('password'));
-	
-	$query = "SELECT november_users.id, username, password, group_concat(november_roles.title) "
-			."FROM november_users, november_roles, november_user_role "
-			."WHERE november_users.id = november_user_role.user_id "
-			."AND november_roles.id = november_user_role.role_id "
-			."AND username = ?";
-	
-	$user = $app['db']->fetchAssoc($query, array(strtolower($username)));
-	
-	$logged_in = $user? password_verify($password, $user['password']): false;	
-	
-	if ($logged_in) {
-		$app['session']->set('user', $user);	
-		return $app->redirect($app['ROOT_DIR']. '/');		
-	} else {
-		$app['session']->set('user', null);
-		$app['session']->getFlashBag()->add('msg', 'Login failed');
-		return $app->redirect($app['ROOT_DIR']. '/login');
-	}
-});
-
-$app->get('/logout', function() use($app) {
-	$app['session']->clear();	
-	$app['session']->getFlashBag()->add('msg', 'You are logged out'); 
-	return $app->redirect($app['ROOT_DIR'].'/login');
-});
+$app->mount('/tests', new TestControllerProvider());
+$app->mount('/users', new UsersControllerProvider());
+$app->mount('/install', new InstallerControllerProvider());
+$app->mount('/', $postsControllerProvider);
 
 $app->run();
 

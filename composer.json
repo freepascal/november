@@ -12,6 +12,9 @@
         "symfony/security-csrf": "~2.7",
         "defuse/php-encryption": "~1.2",
         "jasongrimes/silex-simpleuser": "~2.0",
-        "monolog/monolog": "~1.17"
+        "monolog/monolog": "~1.17",
+        "kilte/silex-captcha": "~1.0",
+        "gregwar/captcha": "~1.1",
+        "kilte/silex-pagination": "~1.1"
     }
 }

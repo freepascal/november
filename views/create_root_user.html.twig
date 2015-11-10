@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<body>
+{% for msg in app.session.getFlashBag.get('msg') %}
+	{{msg}}
+{% endfor %}
+<form method="post">
+	<dt>Username<dl><input type="text" name="username" value=""></dl></dt>
+	<dt>Password<dl><input type="password" name="password" value=""></dl></dt>
+	<dt>Password again<dl><input type="password" name="password_again"></dl></dt>
+	<input type="submit" name="submit" value="Create User">
+</form>	
+</body>	
+</html>

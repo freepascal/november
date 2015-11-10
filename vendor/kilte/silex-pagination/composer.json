@@ -1,0 +1,32 @@
+{
+    "name": "kilte/silex-pagination",
+    "type": "library",
+    "license": "MIT",
+    "description": "PaginationServiceProvider for Silex micro framework",
+    "keywords": ["silex", "pagination", "PaginationServiceProvider"],
+    "authors": [
+        {
+            "name": "Kilte Leichnam",
+            "email": "nwotnbm@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "kilte/pagination": "~1.1"
+    },
+    "require-dev": {
+        "silex/silex": "*",
+        "twig/twig": ">=1.8,<2.0-dev",
+        "phpunit/phpunit": "@stable"
+    },
+    "autoload": {
+        "psr-4": {
+            "Kilte\\Silex\\Pagination\\": "source"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.1.x-dev"
+        }
+    }
+}

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="../css/styles.css">
+</head>	
+<body>
+<!-- content -->
+	<div class="post">
+		<div class="title"><a href="">{{ post.title }}</a></div>
+		<div class="author">by <b>{{ post.username }}</b></div>
+		<div class="created">Created on {{ post.created }}</div>		
+		<div class="body">{{ post.body|raw}}</div>
+		<div class="post_button">
+			<a class="button post_button" href="{{ path('posts_delete', {'id': post.id}) }}">Delete</a> 
+			<a class="button post_button" href="{{ path('posts_edit', {'id': post.id}) }}">Edit</a>
+		</div>
+	</div>	
+</body>	
+</html>

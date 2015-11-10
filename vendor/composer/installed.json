@@ -2138,5 +2138,211 @@
             "logging",
             "psr-3"
         ]
+    },
+    {
+        "name": "gregwar/captcha",
+        "version": "v1.1.1",
+        "version_normalized": "1.1.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Gregwar/Captcha.git",
+            "reference": "1240ab993ca713680573b2d4166900da5f758623"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Gregwar/Captcha/zipball/1240ab993ca713680573b2d4166900da5f758623",
+            "reference": "1240ab993ca713680573b2d4166900da5f758623",
+            "shasum": ""
+        },
+        "require": {
+            "ext-gd": "*",
+            "php": ">=5.3.0"
+        },
+        "time": "2015-09-11 15:23:20",
+        "type": "captcha",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Gregwar\\Captcha\\": "/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Grégoire Passault",
+                "email": "g.passault@gmail.com",
+                "homepage": "http://www.gregwar.com/"
+            },
+            {
+                "name": "Jeremy Livingston",
+                "email": "jeremy.j.livingston@gmail.com"
+            }
+        ],
+        "description": "Captcha generator",
+        "homepage": "https://github.com/Gregwar/Captcha",
+        "keywords": [
+            "bot",
+            "captcha",
+            "spam"
+        ]
+    },
+    {
+        "name": "kilte/silex-captcha",
+        "version": "1.0.1",
+        "version_normalized": "1.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Kilte/silex-captcha.git",
+            "reference": "76ae2232118305d80077352d6cb29ec89ad30032"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Kilte/silex-captcha/zipball/76ae2232118305d80077352d6cb29ec89ad30032",
+            "reference": "76ae2232118305d80077352d6cb29ec89ad30032",
+            "shasum": ""
+        },
+        "require": {
+            "gregwar/captcha": "~1.0",
+            "php": ">=5.3.3"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "@stable",
+            "silex/silex": "*"
+        },
+        "time": "2014-08-31 14:05:31",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Kilte\\Silex\\Captcha\\": "source"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Kilte",
+                "email": "nwotnbm@gmail.com"
+            }
+        ],
+        "description": "Gregwar/Captcha service provider for Silex.",
+        "keywords": [
+            "CaptchaServiceProvider",
+            "captcha",
+            "silex"
+        ]
+    },
+    {
+        "name": "kilte/pagination",
+        "version": "1.1.2",
+        "version_normalized": "1.1.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Kilte/pagination.git",
+            "reference": "586570e646002c8dcc02a52d338d3dcb450e3a0f"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Kilte/pagination/zipball/586570e646002c8dcc02a52d338d3dcb450e3a0f",
+            "reference": "586570e646002c8dcc02a52d338d3dcb450e3a0f",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "@stable"
+        },
+        "time": "2014-12-27 20:03:06",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.1.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Kilte\\Pagination\\": "source"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Kilte Leichnam",
+                "email": "nwotnbm@gmail.com"
+            }
+        ],
+        "description": "Simple pagination",
+        "keywords": [
+            "pagination"
+        ]
+    },
+    {
+        "name": "kilte/silex-pagination",
+        "version": "1.1.1",
+        "version_normalized": "1.1.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Kilte/silex-pagination.git",
+            "reference": "c1dac9c47cb64067641c596b34ce1993b0527efc"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Kilte/silex-pagination/zipball/c1dac9c47cb64067641c596b34ce1993b0527efc",
+            "reference": "c1dac9c47cb64067641c596b34ce1993b0527efc",
+            "shasum": ""
+        },
+        "require": {
+            "kilte/pagination": "~1.1",
+            "php": ">=5.3.3"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "@stable",
+            "silex/silex": "*",
+            "twig/twig": ">=1.8,<2.0-dev"
+        },
+        "time": "2014-08-31 13:28:23",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.1.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Kilte\\Silex\\Pagination\\": "source"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Kilte Leichnam",
+                "email": "nwotnbm@gmail.com"
+            }
+        ],
+        "description": "PaginationServiceProvider for Silex micro framework",
+        "keywords": [
+            "PaginationServiceProvider",
+            "pagination",
+            "silex"
+        ]
     }
 ]

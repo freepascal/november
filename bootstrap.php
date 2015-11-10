@@ -1,10 +1,9 @@
 <?php
+require_once('services/PermissionsServiceProvider.php');
 
 use Symfony\Component\HttpKernel\Debug\ErrorHandler as ErrorHandler;
 use Symfony\Component\HttpKernel\Debug\ExceptionHandler as ExceptionHandler;
-
-require_once('TestControllerProvider.php');
-require_once('PostsControllerProvider.php');
+use Kilte\Silex\Captcha\CaptchaServiceProvider;
 
 // set the error handling
 ini_set('display_errors', 1);
@@ -17,10 +16,11 @@ if ('cli' !== php_sapi_name()) {
 
 $app = new Silex\Application();
 
+// config
 $app['debug'] = true;
-
-$app->mount('/test', new TestControllerProvider());
-$app->mount('/posts', new PostsControllerProvider());
+$app['blog_config'] = array(
+	'page_limit_posts' => 2
+);
 
 $app->register(new Silex\Provider\MonologServiceProvider(), array(
 	'monolog.logfile' => __DIR__.'/log.log'
@@ -41,11 +41,15 @@ $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
 // for using path() in twig
 $app->register(new Silex\Provider\UrlGeneratorServiceProvider());
 
-
 // Templates
 $app->register(new Silex\Provider\TwigServiceProvider(), array(
 	'twig.path' => __DIR__.'/views'
 ));
+
+$app->register(new CaptchaServiceProvider());
+
+// SERVICES
+$app->register(new PermissionsServiceProvider());
 
 $app['ROOT_DIR'] = str_replace($_SERVER['DOCUMENT_ROOT'], '', __DIR__);
 

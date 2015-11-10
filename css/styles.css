@@ -1,0 +1,31 @@
+	.post {
+		padding-top:10px;
+		padding-bottom:10px;
+	}
+	.title {
+		font-size:25px;
+	}
+	.created, .author {
+		font-size:15px;
+	}
+	.body {
+		font-size:20px;
+	}
+	div.new_post {
+		padding-top:5px;
+		padding-bottom:5px;
+		font-size:30px;
+	}
+	a.pagination {
+		font-size:15px;
+	}	
+	div.post_button {
+		font-size:20px;
+	}
+	a.button {
+		-webkit-appearance: button;
+		-moz-appearance: button;		
+		appearance:button;
+		text-decoration: none;
+		color: initial;
+	}

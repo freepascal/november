@@ -24,6 +24,10 @@ return array(
     'Symfony\\Bridge\\Twig\\' => array($vendorDir . '/symfony/twig-bridge'),
     'Silex\\' => array($vendorDir . '/silex/silex/src/Silex'),
     'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
+    'Kilte\\Silex\\Pagination\\' => array($vendorDir . '/kilte/silex-pagination/source'),
+    'Kilte\\Silex\\Captcha\\' => array($vendorDir . '/kilte/silex-captcha/source'),
+    'Kilte\\Pagination\\' => array($vendorDir . '/kilte/pagination/source'),
+    'Gregwar\\Captcha\\' => array($vendorDir . '/gregwar/captcha'),
     'Doctrine\\Common\\Cache\\' => array($vendorDir . '/doctrine/cache/lib/Doctrine/Common/Cache'),
     'BeatSwitch\\Lock\\' => array($vendorDir . '/beatswitch/lock/src'),
 );

@@ -1,0 +1,31 @@
+{
+    "name":        "kilte/silex-captcha",
+    "type":        "library",
+    "keywords":   ["silex", "captcha", "CaptchaServiceProvider"],
+    "description": "Gregwar/Captcha service provider for Silex.",
+    "license":     "MIT",
+    "authors": [
+        {
+            "name":  "Kilte",
+            "email": "nwotnbm@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Kilte\\Silex\\Captcha\\": "source"
+        }
+    },
+    "require": {
+        "php": ">=5.3.3",
+        "gregwar/captcha": "~1.0"
+    },
+    "require-dev": {
+        "silex/silex": "*",
+        "phpunit/phpunit": "@stable"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    }
+}
