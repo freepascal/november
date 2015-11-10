@@ -19,7 +19,14 @@ $app = new Silex\Application();
 // config
 $app['debug'] = true;
 $app['blog_config'] = array(
-	'page_limit_posts' => 2
+	'page_limit_posts' => 2,	
+	'db' => array(
+		'driver'	=> 'pdo_mysql',
+		'host'		=> 'localhost',
+		'user'		=> 'root',
+		'password'	=> '123456',
+		'dbname'	=> 'november'
+	)	
 );
 
 $app->register(new Silex\Provider\MonologServiceProvider(), array(
@@ -28,15 +35,8 @@ $app->register(new Silex\Provider\MonologServiceProvider(), array(
 
 $app->register(new Silex\Provider\SessionServiceProvider());
 $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
-	'db.options' 	=> array(
-			'driver'	=> 'pdo_mysql',
-			'host'		=> 'localhost',
-			'user'		=> 'root',
-			'password'	=> '123456',
-			'dbname'	=> 'november'
-		)
-	)
-);
+	'db.options' => $app['blog_config']['db']
+));
 
 // for using path() in twig
 $app->register(new Silex\Provider\UrlGeneratorServiceProvider());

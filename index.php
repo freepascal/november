@@ -5,9 +5,6 @@ require_once('bootstrap.php');
 
 require_once('models/User.php');
 
-
-
-
 require_once('controllers/TestControllerProvider.php');
 require_once('controllers/UsersControllerProvider.php');
 require_once('controllers/PostsControllerProvider.php');
