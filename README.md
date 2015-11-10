@@ -1,10 +1,8 @@
-# november
-Just a weblog engine written in PHP based on ([Silex]http://silex.sensiolabs.org/) micro framework
+# November PHP Blog
+Just a weblog engine written in PHP based on [Silex] micro framework
 
 #Installation
 1. Open november/boostrap.php and find and edit the following code snippet:
-
-> 
 ```
 // config
 $app['debug'] = true;
