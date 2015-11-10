@@ -1,5 +1,5 @@
 # November PHP Blog
-Just a weblog engine written in PHP based on [Silex] micro framework
+Just a weblog engine written in PHP based on ([Silex](http://silex.sensiolabs.org/)) micro framework
 
 #Installation
 * Open *november/boostrap.php* and find and edit the following code snippet:
@@ -17,4 +17,4 @@ $app['blog_config'] = array(
 	)	
 );
 ```
-* Open browser and run localhost/november/install
+* Open browser and run *localhost/november/install*
