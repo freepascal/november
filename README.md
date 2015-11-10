@@ -2,7 +2,7 @@
 Just a weblog engine written in PHP based on [Silex] micro framework
 
 #Installation
-1. Open november/boostrap.php and find and edit the following code snippet:
+1.  Open *november/boostrap.php* and find and edit the following code snippet:
 ```
 // config
 $app['debug'] = true;
@@ -18,4 +18,4 @@ $app['blog_config'] = array(
 );
 ```
 
-2. Open browser and run localhost/november/install
+2.  Open browser and run localhost/november/install
