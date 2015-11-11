@@ -46,6 +46,7 @@ class InstallerControllerProvider implements ControllerProviderInterface {
 				body TEXT,
 				created TIMESTAMP default current_timestamp,
 				user_id INT,
+				slug VARCHAR(512),
 	
 				PRIMARY KEY (id)
 			);
@@ -133,9 +134,9 @@ DOC_HERE
 			$app['db']->insert('november_posts', array(
 				'title' => 'Connect to Source Repository with SVN',
 				'body' 	=> <<<DOC_HERE
-As an alternative to the daily zip files of the SVN sources, the SVN repository has been made accessible for everyone, with read-only access. This means that you can always have access to the latest source code. It is also a method which requires less bandwidth once you have done the first download (called a "checkout" in SVN lingo). 
-
-<b>Development snapshots</b>
+As an alternative to the daily zip files of the SVN sources, the SVN repository has been made accessible for everyone, with read-only access. This means that you can always have access to the latest source code. It is also a method which requires less bandwidth once you have done the first download (called a "checkout" in SVN lingo).
+<p>
+<b>Development snapshots</b><br>
 How do you obtain the sources via SVN? Generally, you need 3 steps:
 (once you have SVN installed, of course. Look <a href="http://subversion.tigris.org">here</a> for instructions on how to do that.) 
 
