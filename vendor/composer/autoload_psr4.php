@@ -29,5 +29,6 @@ return array(
     'Kilte\\Pagination\\' => array($vendorDir . '/kilte/pagination/source'),
     'Gregwar\\Captcha\\' => array($vendorDir . '/gregwar/captcha'),
     'Doctrine\\Common\\Cache\\' => array($vendorDir . '/doctrine/cache/lib/Doctrine/Common/Cache'),
+    'Cocur\\Slugify\\' => array($vendorDir . '/cocur/slugify/src'),
     'BeatSwitch\\Lock\\' => array($vendorDir . '/beatswitch/lock/src'),
 );

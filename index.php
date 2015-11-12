@@ -10,7 +10,6 @@ require_once('controllers/UsersControllerProvider.php');
 require_once('controllers/PostsControllerProvider.php');
 require_once('controllers/InstallerControllerProvider.php');
 
-
 use Symfony\Component\HttpFoundation\Request as Request;
 
 $app->get('/generate_passwd', function() use($app) {

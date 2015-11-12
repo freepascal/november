@@ -80,7 +80,8 @@ class PostsControllerProvider implements ControllerProviderInterface {
 			$inserted = $app['db']->insert('november_posts', array(
 				'title' 	=> $request->get('title'),
 				'body'		=> $request->get('body'),
-				'user_id' 	=> $app['session']->get('user')['id']
+				'user_id' 	=> $app['session']->get('user')['id'],
+				'slug'		=> $app['slugify']($request->get('title'))
 			));
 	
 			if ($inserted) {	

@@ -1,9 +1,11 @@
-<?php
+d<?php
+
 require_once('services/PermissionsServiceProvider.php');
+require_once('services/SluggableServiceProvider.php');
 
 use Symfony\Component\HttpKernel\Debug\ErrorHandler as ErrorHandler;
 use Symfony\Component\HttpKernel\Debug\ExceptionHandler as ExceptionHandler;
-use Kilte\Silex\Captcha\CaptchaServiceProvider;
+use Kilte\Silex\Captcha\CaptchaServiceProvider; 
 
 // set the error handling
 ini_set('display_errors', 1);
@@ -32,6 +34,8 @@ $app['blog_config'] = array(
 $app->register(new Silex\Provider\MonologServiceProvider(), array(
 	'monolog.logfile' => __DIR__.'/log.log'
 ));
+
+$app->register(new SluggableServiceProvider());
 
 $app->register(new Silex\Provider\SessionServiceProvider());
 $app->register(new Silex\Provider\DoctrineServiceProvider(), array(

@@ -15,6 +15,7 @@
         "monolog/monolog": "~1.17",
         "kilte/silex-captcha": "~1.0",
         "gregwar/captcha": "~1.1",
-        "kilte/silex-pagination": "~1.1"
+        "kilte/silex-pagination": "~1.1",
+        "cocur/slugify": "~1.4"
     }
 }
