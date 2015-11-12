@@ -81,7 +81,7 @@ class PostsControllerProvider implements ControllerProviderInterface {
 				'title' 	=> $request->get('title'),
 				'body'		=> $request->get('body'),
 				'user_id' 	=> $app['session']->get('user')['id'],
-				'slug'		=> $app['slugify']($request->get('title'))
+				'slug'		=> $app['slugify']->slugify($request->get('title'))
 			));
 	
 			if ($inserted) {	

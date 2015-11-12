@@ -8,9 +8,8 @@ use Cocur\Slugify\Slugify as Slugify;
 class SluggableServiceProvider implements ServiceProviderInterface {
 	
 	public function register(Application $app) {		
-		$app['slugify'] = $app->share(function($txt) use($app) {
-			$slugify = new Slugify;
-			return $slugify->slugify($txt);
+		$app['slugify'] = $app->share(function() {
+			return new Slugify;
 		});
 	}
 	

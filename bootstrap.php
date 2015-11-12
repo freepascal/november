@@ -1,4 +1,4 @@
-d<?php
+<?php
 
 require_once('services/PermissionsServiceProvider.php');
 require_once('services/SluggableServiceProvider.php');
@@ -27,7 +27,8 @@ $app['blog_config'] = array(
 		'host'		=> 'localhost',
 		'user'		=> 'root',
 		'password'	=> '123456',
-		'dbname'	=> 'november'
+		'dbname'	=> 'november',
+		'charset'	=> 'utf8'
 	)	
 );
 

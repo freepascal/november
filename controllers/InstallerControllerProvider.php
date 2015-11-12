@@ -23,8 +23,8 @@ class InstallerControllerProvider implements ControllerProviderInterface {
 			
 			CREATE TABLE november_roles (
 				id INT auto_increment,
-				title VARCHAR(32),
-				description TEXT,
+				title VARCHAR(32) CHARACTER SET ucs2,
+				description TEXT CHARACTER SET ucs2,
 	
 				PRIMARY KEY (id),
 				UNIQUE KEY (title)
@@ -42,8 +42,8 @@ class InstallerControllerProvider implements ControllerProviderInterface {
 			
 			CREATE TABLE november_posts (
 				id INT auto_increment,
-				title VARCHAR(255),
-				body TEXT,
+				title VARCHAR(255) CHARACTER SET ucs2,
+				body TEXT CHARACTER SET ucs2,
 				created TIMESTAMP default current_timestamp,
 				user_id INT,
 				slug VARCHAR(512),
@@ -60,7 +60,8 @@ class InstallerControllerProvider implements ControllerProviderInterface {
 				UNIQUE KEY (user_id, role_id)			
 			);
 DOC_HERE
-);			
+			);
+
 			return $app->redirect(
 				$app['url_generator']->generate('installer_create_data')
 			);
